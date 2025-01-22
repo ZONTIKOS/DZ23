@@ -1,13 +1,12 @@
 import javax.swing.*;
 import javax.swing.JButton;
-import javax.swing.JTextField;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Settings extends JFrame implements ActionListener {
     Settings(UI ui) {
-        setSize(720, 480);
+        setSize(1080, 720);
         setTitle("Настройки");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         getContentPane().setBackground(new Color(156, 156, 156));
@@ -85,7 +84,42 @@ public class Settings extends JFrame implements ActionListener {
                 ui.getHero().requestFocusInWindow();
             }
         });
+
+        JTextArea Healthzmina = new JTextArea("Введіть Здоров'я");
+        Healthzmina.setBounds(300, 250, 200, 50);
+        add(Healthzmina);
+        JButton primenitt = new JButton("Применити Здоров'я");
+        add(primenitt);
+        primenitt.setBounds(300, 300, 200, 50);
+        primenitt.setVisible(true);
+        primenitt.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ui.getHero().setLife(Integer.parseInt(Healthzmina.getText()));
+                ui.gettext();
+                ui.getHero().setFocusable(true);
+                ui.getHero().requestFocusInWindow();
+            }
+        });
+
+        JTextArea Speed = new JTextArea("Введіть Швидкість");
+        Speed.setBounds(300, 450, 200, 50);
+        add(Speed);
+        JButton primenit2 = new JButton("Применити Швидкість");
+        add(primenit2);
+
+        primenit2.setBounds(300, 500, 200, 50);
+        primenit2.setVisible(true);
+        primenit2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ui.getHero().setSpeedX(Integer.parseInt(Speed.getText()));
+                ui.getHero().setFocusable(true);
+                ui.getHero().requestFocusInWindow();
+            }
+        });
     }
+
 
 
     @Override

@@ -2,19 +2,18 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class UI extends JFrame  {
+public class UI extends JFrame {
 
     private Hero hero;
+    private JTextArea text; // Переменная text объявлена как поле класса
 
     public Hero getHero() {
         return hero;
     }
 
-    UI (){
-
-
+    UI() {
         setSize(1920, 1080);
-        setLayout( null);
+        setLayout(null);
         hero = new Hero("src/sd.png");
         hero.setBounds(100, 200, 70, 70);
 
@@ -48,7 +47,18 @@ public class UI extends JFrame  {
             }
         });
         //---------------------------------
+        System.out.println("Life: " + getHero().getLife());
+        text = new JTextArea("Life: " + getHero().getLife()); // Инициализация text
+        getHero().setFocusable(true);
+        getHero().requestFocusInWindow();
+        text.setEditable(false);
+        text.setBounds(0, 0, 100, 20);
+        add(text);
+        text.setVisible(true);
+    }
 
-
+    // Метод для обновления текста
+    public void gettext() {
+        text.setText("Life: " + getHero().getLife());
     }
 }

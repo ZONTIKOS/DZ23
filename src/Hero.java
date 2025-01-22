@@ -15,7 +15,14 @@ public class Hero extends JButton implements ActionListener, KeyListener {
     int yake = 0;
     ImgThread imgThread;
     int y = 0;
-
+    int life = 100;
+    int speedX = 1;
+    public int getSpeedX() {
+        return speedX;
+    }
+    public void setSpeedX(int speedX) {
+        this.speedX = speedX;
+    }
     public Hero(String path) {
 
         setLayout(null);
@@ -54,6 +61,14 @@ public class Hero extends JButton implements ActionListener, KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {}
+
+    public int getLife() {
+        return life;
+    }
+
+    public void setLife(int life) {
+        this.life = life;
+    }
 
     @Override
     public void keyPressed(KeyEvent e) {

@@ -11,7 +11,7 @@ public class ImgThread implements Runnable{
             hero.y = 0;
             hero.x = 0;
             for (int i = 1; i < 9; i++) {
-                hero.setBounds(hero.getX()+10, hero.getY(), hero.getWidth(), hero.getHeight());
+                hero.setBounds(hero.getX()+10*hero.speedX, hero.getY(), hero.getWidth(), hero.getHeight());
                 hero.x -= imgStep;
                 hero.repaint();
                 try {
@@ -28,7 +28,7 @@ public class ImgThread implements Runnable{
             hero.x = -560;
             hero.y = 0;
             for (int i = 1; i < 8; i++) {
-                hero.setBounds(hero.getX()-10, hero.getY(), hero.getWidth(), hero.getHeight());
+                hero.setBounds(hero.getX()-10*hero.speedX, hero.getY(), hero.getWidth(), hero.getHeight());
                 hero.x += imgStep;
                 hero.repaint();
                 try {
@@ -46,7 +46,7 @@ public class ImgThread implements Runnable{
             hero.x = -350;
             for (int i = 1; i < 7; i++) {
 
-                hero.setBounds(hero.getX()+5, hero.getY(), hero.getWidth(), hero.getHeight());
+                hero.setBounds(hero.getX()+5*hero.speedX, hero.getY(), hero.getWidth(), hero.getHeight());
                 hero.x -= imgStep;
                 hero.repaint();
                 try {
@@ -70,7 +70,7 @@ public class ImgThread implements Runnable{
             hero.y = -700;
 
             for (int i = 1; i < 9; i++) {
-                hero.setBounds(hero.getX()+15, hero.getY(), hero.getWidth(), hero.getHeight());
+                hero.setBounds(hero.getX()+15*hero.speedX, hero.getY(), hero.getWidth(), hero.getHeight());
                 hero.x -= imgStep;
                 hero.repaint();
                 try {
@@ -126,7 +126,7 @@ public class ImgThread implements Runnable{
             hero.y = -700;
             hero.right = false;
             for (int i = 1; i < 9; i++) {
-                hero.setBounds(hero.getX()-15, hero.getY(), hero.getWidth(), hero.getHeight());
+                hero.setBounds(hero.getX()-15*hero.speedX, hero.getY(), hero.getWidth(), hero.getHeight());
                 hero.x -= imgStep;
                 hero.repaint();
                 try {
@@ -151,12 +151,12 @@ public class ImgThread implements Runnable{
             int ee = -140;
             k = 0;
             for (int i = 1; i < 6; i++) {
-                hero.setBounds(hero.getX()- 10 , hero.getY(), hero.getWidth(), hero.getHeight());
+                hero.setBounds(hero.getX()- 10*hero.speedX , hero.getY(), hero.getWidth(), hero.getHeight());
                 if (k < 3) {
-                    hero.setBounds(hero.getX() , hero.getY()-10, hero.getWidth(), hero.getHeight());
+                    hero.setBounds(hero.getX()*hero.speedX , hero.getY()-10, hero.getWidth(), hero.getHeight());
                     k ++;
                 }else {
-                    hero.setBounds(hero.getX(), hero.getY() + 15, hero.getWidth(), hero.getHeight());
+                    hero.setBounds(hero.getX(), hero.getY()*hero.speedX + 15, hero.getWidth(), hero.getHeight());
                     k++;
                 }
                     hero.x -= imgStep;
